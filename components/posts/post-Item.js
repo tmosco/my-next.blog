@@ -1,25 +1,32 @@
-import Link from "next/";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./post-item.module.css";
 
 const PostItem = (props) => {
 const {title , image, excerpt, date, slug } = props.post
 
+console.log(`${slug}/${image}`)
+
 const formattedDate = new Date(date).toLocaleDateString('en-US',{
     day:'numeric',
     month:'long',
-    year:'numeric'
+    year:'numeric' 
 })
 
-const imagePath = `/images/posts${slug}/${image}`;
+const imagePath = `/images/posts/${slug}/${image}`;
+
+
+"getting-started-with-nextJs4/getting-started-with-nextjs"
 const linkPath = `/posts/${slug}`;
+
+
 
   return (
     <li className={styles.post}>
       <Link href={linkPath}>
         <a>
           <div className={styles.image}>
-            <Image src={imagePath} alt={title} width={300} height={200}/>
+            <Image src={imagePath} alt={title} width={300} height={200} layout={"responsive"}/>
           </div>
           <div className={styles.content}>
             <h3>{title}</h3>

@@ -1,13 +1,12 @@
-import PostItem from "./post-Item"
+import PostItem from "./post-Item";
 import styles from "./posts-grid.module.css";
 
-const posts=[];
-
-const PostsGrid = ({posts}) => {
+const PostsGrid = (props) => {
+  const { posts } = props;
   return (
     <ul className={styles.grid}>
       {posts.map((post) => (
-        <PostItem key={post.slug} post={post}/>
+        <PostItem key={post.slug} post={post} />
       ))}
     </ul>
   );
