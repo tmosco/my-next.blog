@@ -5,7 +5,6 @@ import styles from "./post-item.module.css";
 const PostItem = (props) => {
 const {title , image, excerpt, date, slug } = props.post
 
-console.log(`${slug}/${image}`)
 
 const formattedDate = new Date(date).toLocaleDateString('en-US',{
     day:'numeric',
